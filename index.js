@@ -1,7 +1,7 @@
 const app = require('express')();
 
-app.get('/*', function(req, res) {
-res.type("text/html").end("<h1>Hello world</h1>")
+app.get('/*', async function(req, res) {
+res.type("text/html").end(await axios("https://google.com"))
 })
 
 app.listen(process.env.port)
