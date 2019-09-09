@@ -43,11 +43,11 @@ The Sorry Mind
 </head>
 <body>
 (function() {
-var tmp =`<ul>`;
+var tmp ="<ul>";
 list.data.forEach(function(x) {
-tmp+=`<li>${x.text}</li>`
+tmp+="<li>"+x.text+"</li>";
 })
-tmp+=`</ul>`;
+tmp+="</ul>";
 return tmp;
 })()
 </body>
