@@ -11,6 +11,9 @@ res.type("text/html").end(
 <title>
 The Sorry Mind
 </title>
+<meta name="description" content="The Sorry Mind is about a person who knew People more than them and never told them.">
+<meta name="keywords" content="The Sorry Mind, Blog" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 <script type="application/ld+json">
 {
    "@context":"https://schema.org",
