@@ -2,7 +2,7 @@ const app = require('express')();
 const axios = require("axios");
 
 app.get('/*', async function(req, res) {
-var list = await axios("https://typi.tk/?url=https://github.com/theabbie/awto/tree/gh-pages/articles&sel=.list-item&attribs=href&t=1");
+var raw = await axios("https://typi.tk/?url=https://github.com/theabbie/awto/tree/gh-pages/articles&sel=.list-item&attribs=href&t=1");
 var root = "https://"+req.headers.host+"/";
 var path = decodeURIComponent(req.url.split("?")[0].substring(1))
 res.type("text/html").end(
@@ -43,10 +43,11 @@ The Sorry Mind
 </head>
 <body>
 ${
+var list = raw.data.map(x => decodeURIComponent(x.split("/").reverse()[0]))
 (function() {
 var tmp ="<ul>";
 list.data.forEach(function(x) {
-tmp+="<li>"+x.attrib+"</li>";
+tmp+="<li>"+x+"</li>";
 })
 tmp+="</ul>";
 return tmp;
