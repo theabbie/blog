@@ -46,7 +46,7 @@ ${
 var list = raw.data.map(x => decodeURIComponent(x.split("/").reverse()[0]))
 (function() {
 var tmp ="<ul>";
-list.data.forEach(function(x) {
+list.forEach(function(x) {
 tmp+="<li>"+x+"</li>";
 })
 tmp+="</ul>";
