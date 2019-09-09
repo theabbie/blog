@@ -17,6 +17,10 @@ The Sorry Mind
 <script type="application/ld+json">
 {
    "@context":"https://schema.org",
+   "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "${root+path}"
+      },
    "@type":"Article",
    "name":"The Sorry Mind",
    "url":"${root+path}",
