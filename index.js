@@ -47,6 +47,12 @@ The Sorry Mind
 }
 </script>
 <style>
+@font-face {
+font-family: kirvy;
+font-display: swap;
+src: url('https://cdn.jsdelivr.net/gh/theabbie/example@gh-pages/files/kirvy.otf');
+}
+* {font-family: kirvy;}
 a {text-decoration: none; color: black;}
 </style>
 </head>
