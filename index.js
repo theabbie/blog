@@ -37,7 +37,7 @@ The Sorry Mind
    "datePublished":"2004-10-22T20:08:26Z",
    "dateModified":"2019-09-06T05:59:20Z",
    "image":"https://cdn.jsdelivr.net/gh/theabbie/awto@gh-pages/files/circle-cropped.png",
-   "headline":"${path}"
+   "headline":"${path+"|The Sorry Mind"}"
 }
 </script>
 </head>
