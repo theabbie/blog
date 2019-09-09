@@ -2,7 +2,7 @@ const app = require('express')();
 const axios = require("axios");
 
 app.get('/*', function(req, res) {
-axios("https://typi.tk/?url=https://github.com/theabbie/awto/tree/gh-pages/files&sel=.list-item&attribs=href&t=1").then(function(list) {
+axios("https://typi.tk/?url=https://github.com/theabbie/awto/tree/gh-pages/articles&sel=.list-item&attribs=href&t=1").then(function(list) {
 var root = "https://"+req.headers.host+"/";
 var path = decodeURIComponent(req.url.split("?")[0].substring(1))
 res.type("text/html").end(
@@ -46,7 +46,7 @@ ${
 (function() {
 var tmp ="<ul>";
 list.data.forEach(function(x) {
-tmp+="<li>"+x.text+"</li>";
+tmp+="<li>"+x.attrib+"</li>";
 })
 tmp+="</ul>";
 return tmp;
