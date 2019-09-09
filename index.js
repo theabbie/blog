@@ -48,6 +48,11 @@ The Sorry Mind
 </head>
 <body>
 ${
+<center>
+<h1>
+The Sorry Mind
+</h1>
+</center>
 (function() {
 var list = raw.data.map(x => decodeURIComponent(x.attrib.split("/").reverse()[0]))
 var tmp ="<ul>";
