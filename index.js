@@ -42,6 +42,7 @@ The Sorry Mind
 </script>
 </head>
 <body>
+${
 (function() {
 var tmp ="<ul>";
 list.data.forEach(function(x) {
@@ -50,6 +51,7 @@ tmp+="<li>"+x.text+"</li>";
 tmp+="</ul>";
 return tmp;
 })()
+}
 </body>
 </html>`
 )
