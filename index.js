@@ -2,9 +2,10 @@ const app = require('express')();
 const axios = require("axios");
 
 app.get('/*', async function(req, res) {
-var raw = await axios("https://typi.tk/?url=https://github.com/theabbie/awto/tree/gh-pages/articles&sel=.list-item&attribs=href&t=1");
 var root = "https://"+req.headers.host+"/";
 var path = decodeURIComponent(req.url.split("?")[0].substring(1))
+var list = await axios("https://typi.tk/?url=https://github.com/theabbie/awto/tree/gh-pages/articles&sel=.list-item&attribs=href&t=1");
+var content = await axios("https://typi.tk/?url=https://github.com/theabbie/awto/blob/gh-pages/articles/"+path+"&sel=.js-file-line&attribs=class&t=1");
 res.type("text/html").end(
 `<html>
 <head>
@@ -53,7 +54,7 @@ The Sorry Mind
 </h1>
 </center>
 ${(function() {
-var list = raw.data.map(x => decodeURIComponent(x.attrib.split("/").reverse()[0]))
+var list = list.data.map(x => decodeURIComponent(x.attrib.split("/").reverse()[0]))
 var tmp ="<ul>";
 list.forEach(function(x) {
 tmp+="<li>"+x+"</li>";
@@ -61,6 +62,9 @@ tmp+="<li>"+x+"</li>";
 tmp+="</ul>";
 return tmp;
 })()}
+<p>
+${content.data.map(x => x.text).join("<br>")}
+</p>
 </body>
 </html>`
 )
