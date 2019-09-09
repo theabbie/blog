@@ -14,6 +14,7 @@ The Sorry Mind
 <meta name="description" content="The Sorry Mind is about a person who knew People more than them and never told them.">
 <meta name="keywords" content="The Sorry Mind, Blog" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<link rel="shortcut icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/theabbie/awto@gh-pages/files/circle-cropped.png">
 <script type="application/ld+json">
 {
    "@context":"https://schema.org",
