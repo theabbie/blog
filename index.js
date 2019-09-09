@@ -44,7 +44,7 @@ The Sorry Mind
 <body>
 ${
 (function() {
-var list = raw.data.map(x => decodeURIComponent(x.split("/").reverse()[0]))
+var list = raw.data.map(x => decodeURIComponent(x.attrib.split("/").reverse()[0]))
 var tmp ="<ul>";
 list.forEach(function(x) {
 tmp+="<li>"+x+"</li>";
