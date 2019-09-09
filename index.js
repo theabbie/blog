@@ -60,7 +60,7 @@ ${(function() {
 var list = raw.data.map(x => decodeURIComponent(x.attrib.split("/").reverse()[0]))
 var tmp ="<ul>";
 list.forEach(function(x) {
-tmp+="<li><a href='"/+x+"'>"+x+"</a></li>";
+tmp+="<li><a href='/"+x+"'>"+x+"</a></li>";
 })
 tmp+="</ul>";
 return tmp;
