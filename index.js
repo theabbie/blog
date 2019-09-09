@@ -1,8 +1,8 @@
 const app = require('express')();
 const axios = require("axios");
 
-app.get('/*', function(req, res) {
-axios("https://typi.tk/?url=https://github.com/theabbie/awto/tree/gh-pages/articles&sel=.list-item&attribs=href&t=1").then(function(list) {
+app.get('/*', async function(req, res) {
+var list = await axios("https://typi.tk/?url=https://github.com/theabbie/awto/tree/gh-pages/articles&sel=.list-item&attribs=href&t=1");
 var root = "https://"+req.headers.host+"/";
 var path = decodeURIComponent(req.url.split("?")[0].substring(1))
 res.type("text/html").end(
@@ -55,7 +55,6 @@ return tmp;
 </body>
 </html>`
 )
-})
 })
 
 app.listen(process.env.port)
