@@ -46,6 +46,9 @@ The Sorry Mind
    "headline":"${path+"|The Sorry Mind"}"
 }
 </script>
+<style>
+a {text-decoration: none;}
+</style>
 </head>
 <body>
 <center>
