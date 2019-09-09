@@ -47,7 +47,7 @@ The Sorry Mind
 }
 </script>
 <style>
-a {text-decoration: none;}
+a {text-decoration: none; color: black;}
 </style>
 </head>
 <body>
