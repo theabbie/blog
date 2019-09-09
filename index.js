@@ -3,7 +3,8 @@ const axios = require("axios");
 
 app.get('/*', function(req, res) {
 axios("https://typi.tk/?url=https://github.com/theabbie/awto/tree/gh-pages/files&sel=.list-item&attribs=href&t=1").then(function(list) {
-var url = req.protocol + '://' + req.get('host') + req.url;
+var root = "https://"+req.headers.host+"/";
+var path = decodeURIComponent(req.url.split("?")[0].substring(1))
 res.type("text/html").end(
 `<html>
 <head>
@@ -15,9 +16,9 @@ The Sorry Mind
    "@context":"https://schema.org",
    "@type":"Article",
    "name":"The Sorry Mind",
-   "url":"${url}",
+   "url":"${root+path}",
    "sameAs":"https://twitter.com/theabbiee",
-   "mainEntity":"${url}",
+   "mainEntity":"${root+path}",
    "author":{
       "@type":"Organization",
       "name":"Abhishek Chaudhary"
@@ -33,12 +34,19 @@ The Sorry Mind
    "datePublished":"2004-10-22T20:08:26Z",
    "dateModified":"2019-09-06T05:59:20Z",
    "image":"https://cdn.jsdelivr.net/gh/theabbie/awto@gh-pages/files/circle-cropped.png",
-   "headline":"${decodeURIComponent(req.url.substring(1))}"
+   "headline":"${path}"
 }
 </script>
 </head>
 <body>
-
+(function() {
+var tmp =`<ul>`;
+list.data.forEach(function(x) {
+tmp+=`<li>${x.text}</li>`
+})
+tmp+=`</ul>`;
+return tmp;
+})()
 </body>
 </html>`
 )
