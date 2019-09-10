@@ -80,10 +80,10 @@ a {text-decoration: none; color: black;}
 ${repeat("<li class='list-group-item'><a href='/||'>||</a></li>",list)}
 </ul>
 </div>
-<div class="col-sm-8">
+<div class="col-sm-7">
 ${content.data}
 </div>
-<div class="col-sm-2">
+<div class="col-sm-3">
 <div class="card">
 <img class="card-img-top" src="https://cdn.jsdelivr.net/gh/theabbie/awto@gh-pages/files/IMG_20190720_184556.jpg" alt="Abhishek" style="width:100%">
 <div class="card-body">
