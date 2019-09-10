@@ -89,7 +89,7 @@ ${repeat("<li class='list-group-item'><a href='"+path+"/||'>||</a></li>",list)}
     <li class="breadcrumb-item"><a href="/">Home</a></li>
     ${(function() {
     var rs = "";
-    path.split("/").splice(0,path.split("/").length-1).forEach(function(x,i) {rs+="<li class='breadcrumb-item'><a href='"+path.split("/").splice(0,i+1).join("/")+"'>"+x+"</a></li>"})
+    path.split("/").splice(0,path.split("/").length-1).forEach(function(x,i) {rs+="<li class='breadcrumb-item'><a href='/"+path.split("/").splice(0,i+1).join("/")+"'>"+x+"</a></li>"})
     return rs;
     })()}
     <li class="breadcrumb-item active" aria-current="page">${title}</li>
