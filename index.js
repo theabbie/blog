@@ -5,7 +5,7 @@ app.get('/*', async function(req, res) {
 var root = "https://"+req.headers.host+"/";
 var path = decodeURIComponent(req.url.split("?")[0].substring(1))
 var title = path.split("/").reverse()[0];
-var raw = await axios("https://typi.tk/?url=https://github.com/theabbie/awto/tree/gh-pages/articles"+path+"&sel=.list-item&attribs=href&t=1");
+var raw = await axios("https://typi.tk/?url=https://github.com/theabbie/awto/tree/gh-pages/articles/"+path+"&sel=.list-item&attribs=href&t=1");
 var list = raw.data.map(x => decodeURIComponent(x.attrib.split("/").reverse()[0]))
 var content = await axios("https://typi.tk/?url=https://github.com/theabbie/awto/blob/gh-pages/articles/"+path+"&sel=.js-file-line&attribs=class&t=1&join= &pad=@");
 function repeat(str,arr) {
