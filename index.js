@@ -23,6 +23,7 @@ The Sorry Mind
 <meta name="keywords" content="The Sorry Mind, Blog" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -83,7 +84,16 @@ ${repeat("<li class='list-group-item'><a href='/||'>||</a></li>",list)}
 ${content.data}
 </div>
 <div class="col-sm-2">
-
+<div class="card" style="width:400px">
+<img class="card-img-top" src="https://cdn.jsdelivr.net/gh/theabbie/awto@gh-pages/files/IMG_20190720_184556.jpg" alt="Abhishek" style="width:100%">
+<div class="card-body">
+<h4 class="card-title">Abhishek</h4>
+<p class="card-text">
+Being a developer sometimes feels so amazing because we are instructing non-living machines to do wonderful tasks, it is more than an art and few picasso's exist
+</p>
+<a href="https://github.con/theabbie" class="btn btn-primary"><i class='fab fa-github'></i> Github</a>
+</div>
+</div>
 </div>
 </div> 
 </div>
