@@ -77,7 +77,7 @@ ${repeat("<li>||</li>",list)}
 </ul>
 </div>
 <div class="col-sm-9"></div>
-${content}
+${content.data}
 </div> 
 </div>
 </body>
