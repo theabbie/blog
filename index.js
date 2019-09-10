@@ -72,7 +72,7 @@ a {text-decoration: none; color: black;}
 <body>
 <div class="container-fluid">
 <div class="jumbotron jumbotron-fluid">
-<div class="container">
+<div class="container-fluid text-center">
 <h1>The Sorry Mind</h1>      
 </div>
 </div>
