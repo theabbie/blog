@@ -78,12 +78,12 @@ a {text-decoration: none; color: black;}
 </div>
 </div>
 <div class="row">
-<div class="col-sm-2">
+${list==[]?"":`<div class="col-sm-2">
 <ul class="list-group">
 ${repeat("<li class='list-group-item'><a href='"+path+"/||'>||</a></li>",list)}
 </ul>
-</div>
-<div class="col-sm-7" style="margin-top: 20px;">
+</div>`}
+<div class="col-sm-${list==[]?"9":"7"}" style="margin-top: 20px;">
 <nav aria-label="breadcrumb">
   <ul class="breadcrumb">
     <li class="breadcrumb-item"><a href="/">Home</a></li>
