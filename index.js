@@ -97,7 +97,7 @@ ${repeat("<li class='list-group-item'><a href='"+path+"/||'>||</a></li>",list)}
 </nav>
 ${content.data}
 </div>
-<div class="col-sm-3">
+<div class="col-sm-3" style="margin-top: 20px;">
 <div class="card">
 <img class="card-img-top" src="https://cdn.jsdelivr.net/gh/theabbie/awto@gh-pages/files/IMG_20190720_184556.jpg" alt="Abhishek" style="width:100%">
 <div class="card-body">
