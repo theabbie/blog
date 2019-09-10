@@ -63,10 +63,12 @@ a {text-decoration: none; color: black;}
 </style>
 </head>
 <body>
+<div class="container-fluid">
 <div class="row">
   <div class="col-sm-4">abc abc abc abc abc abc abc abc abc abc abc abc</div>
   <div class="col-sm-8">def def def def def def def def def def def def</div>
 </div> 
+</div>
 </body>
 </html>`
 )
