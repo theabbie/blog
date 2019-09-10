@@ -18,7 +18,7 @@ res.type("text/html").end(
 <html lang="en">
 <head>
 <title>
-${path=""?"The Sorry Mind":title+"|The Sorry Mind"}
+${path==""?"The Sorry Mind":title+" | The Sorry Mind"}
 </title>
 <meta name="description" content="The Sorry Mind is about a person who knew People more than them and never told them.">
 <meta name="keywords" content="The Sorry Mind, Blog" />
@@ -56,7 +56,7 @@ ${path=""?"The Sorry Mind":title+"|The Sorry Mind"}
    "datePublished":"2004-10-22T20:08:26Z",
    "dateModified":"2019-09-06T05:59:20Z",
    "image":"https://cdn.jsdelivr.net/gh/theabbie/awto@gh-pages/files/circle-cropped.png",
-   "headline":"${title+"|The Sorry Mind"}"
+   "headline":"${title+" | The Sorry Mind"}"
 }
 </script>
 <style>
