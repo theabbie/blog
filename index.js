@@ -4,6 +4,7 @@ const axios = require("axios");
 app.get('/*', async function(req, res) {
 var root = "https://"+req.headers.host+"/";
 var path = decodeURIComponent(req.url.split("?")[0].substring(1))
+var title = path.split("/").reverse()[0];
 var raw = await axios("https://typi.tk/?url=https://github.com/theabbie/awto/tree/gh-pages/articles&sel=.list-item&attribs=href&t=1");
 var list = raw.data.map(x => decodeURIComponent(x.attrib.split("/").reverse()[0]))
 var content = await axios("https://typi.tk/?url=https://github.com/theabbie/awto/blob/gh-pages/articles/"+path+"&sel=.js-file-line&attribs=class&t=1&join= &pad=@");
@@ -17,7 +18,7 @@ res.type("text/html").end(
 <html lang="en">
 <head>
 <title>
-The Sorry Mind
+${path=""?"The Sorry Mind":title+"|The Sorry Mind"}
 </title>
 <meta name="description" content="The Sorry Mind is about a person who knew People more than them and never told them.">
 <meta name="keywords" content="The Sorry Mind, Blog" />
@@ -55,7 +56,7 @@ The Sorry Mind
    "datePublished":"2004-10-22T20:08:26Z",
    "dateModified":"2019-09-06T05:59:20Z",
    "image":"https://cdn.jsdelivr.net/gh/theabbie/awto@gh-pages/files/circle-cropped.png",
-   "headline":"${path+"|The Sorry Mind"}"
+   "headline":"${title+"|The Sorry Mind"}"
 }
 </script>
 <style>
@@ -85,9 +86,9 @@ ${repeat("<li class='list-group-item'><a href='/||'>||</a></li>",list)}
 <div class="col-sm-7">
 <nav aria-label="breadcrumb">
   <ul class="breadcrumb">
-    <li class="breadcrumb-item"><a href="#">Home</a></li>
-    <li class="breadcrumb-item"><a href="#">Library</a></li>
-    <li class="breadcrumb-item active" aria-current="page">Data</li>
+    <li class="breadcrumb-item"><a href="/">Home</a></li>
+    <li class="breadcrumb-item"><a href="#">${path.split("/")[0]}</a></li>
+    <li class="breadcrumb-item active" aria-current="page">${title}</li>
   </ul>
 </nav>
 ${content.data}
