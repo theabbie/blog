@@ -91,7 +91,7 @@ ${content.data}
 <p class="card-text">
 Being a developer sometimes feels so amazing because we are instructing non-living machines to do wonderful tasks, it is more than an art and few picasso's exist
 </p>
-<a href="https://github.con/theabbie" class="btn btn-primary"><i class='fab fa-github'></i> Github</a>
+<a href="https://github.com/theabbie" class="btn btn-primary"><i class='fab fa-github'></i> Github</a>
 </div>
 </div>
 </div>
