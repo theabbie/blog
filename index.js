@@ -83,7 +83,7 @@ a {text-decoration: none; color: black;}
 ${repeat("<li class='list-group-item'><a href='"+path+"/||'>||</a></li>",list)}
 </ul>
 </div>
-<div class="col-sm-7">
+<div class="col-sm-7" style="margin-top: 20px;">
 <nav aria-label="breadcrumb">
   <ul class="breadcrumb">
     <li class="breadcrumb-item"><a href="/">Home</a></li>
