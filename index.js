@@ -75,12 +75,15 @@ a {text-decoration: none; color: black;}
 </div>
 <div class="row">
 <div class="col-sm-2">
-<ul>
-${repeat("<li><a href='/||'>||</a></li>",list)}
+<ul class="list-group">
+${repeat("<li class="list-group-item"><a href='/||'>||</a></li>",list)}
 </ul>
 </div>
-<div class="col-sm-10">
+<div class="col-sm-8">
 ${content.data}
+</div>
+<div class="col-sm-2">
+
 </div>
 </div> 
 </div>
