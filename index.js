@@ -71,12 +71,12 @@ a {text-decoration: none; color: black;}
 <body>
 <div class="container-fluid">
 <div class="row">
-<div class="col-sm-3">
+<div class="col-sm-2">
 <ul>
 ${repeat("<li>||</li>",list)}
 </ul>
 </div>
-<div class="col-sm-9">
+<div class="col-sm-10">
 ${content.data}
 </div>
 </div> 
