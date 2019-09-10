@@ -76,7 +76,7 @@ a {text-decoration: none; color: black;}
 <div class="row">
 <div class="col-sm-2">
 <ul class="list-group">
-${repeat("<li class="list-group-item"><a href='/||'>||</a></li>",list)}
+${repeat("<li class='list-group-item'><a href='/||'>||</a></li>",list)}
 </ul>
 </div>
 <div class="col-sm-8">
