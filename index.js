@@ -7,14 +7,19 @@ var path = decodeURIComponent(req.url.split("?")[0].substring(1))
 var raw = await axios("https://typi.tk/?url=https://github.com/theabbie/awto/tree/gh-pages/articles&sel=.list-item&attribs=href&t=1");
 var content = await axios("https://typi.tk/?url=https://github.com/theabbie/awto/blob/gh-pages/articles/"+path+"&sel=.js-file-line&attribs=class&t=1");
 res.type("text/html").end(
-`<html>
+`<!DOCTYPE html>
+<html lang="en">
 <head>
 <title>
 The Sorry Mind
 </title>
 <meta name="description" content="The Sorry Mind is about a person who knew People more than them and never told them.">
 <meta name="keywords" content="The Sorry Mind, Blog" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <link rel="shortcut icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/theabbie/awto@gh-pages/files/circle-cropped.png">
 <script type="application/ld+json">
 {
@@ -53,27 +58,15 @@ font-display: swap;
 src: url('https://cdn.jsdelivr.net/gh/theabbie/example@gh-pages/files/kirvy.otf');
 }
 * {font-family: kirvy;}
+body {margin: 0 0 0 0;}
 a {text-decoration: none; color: black;}
 </style>
 </head>
 <body>
-<center>
-<h1>
-The Sorry Mind
-</h1>
-</center>
-${(function() {
-var list = raw.data.map(x => decodeURIComponent(x.attrib.split("/").reverse()[0]))
-var tmp ="<ul>";
-list.forEach(function(x) {
-tmp+="<li><a href='/"+x+"'>"+x+"</a></li>";
-})
-tmp+="</ul>";
-return tmp;
-})()}
-<p>
-${content.data.map(x => x.text).join("<br>")}
-</p>
+<div class="row">
+  <div class="col-sm-4">abc abc abc abc abc abc abc abc abc abc abc abc</div>
+  <div class="col-sm-8">def def def def def def def def def def def def</div>
+</div> 
 </body>
 </html>`
 )
