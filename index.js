@@ -76,7 +76,7 @@ a {text-decoration: none; color: black;}
 <div class="row">
 <div class="col-sm-2">
 <ul>
-${repeat("<li>||</li>",list)}
+${repeat("<li><a href='/||'>||</a></li>",list)}
 </ul>
 </div>
 <div class="col-sm-10">
