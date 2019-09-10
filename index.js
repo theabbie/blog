@@ -9,7 +9,7 @@ var list = raw.data.map(x => decodeURIComponent(x.attrib.split("/").reverse()[0]
 var content = await axios("https://typi.tk/?url=https://github.com/theabbie/awto/blob/gh-pages/articles/"+path+"&sel=.js-file-line&attribs=class&t=1&join= &pad=@");
 function repeat(str,arr) {
 var rs = "";
-arr.forEach(function(x) {rs+=str.split("||").join(x)})
+arr.forEach(function(x) {rs+=(str.split("||").join(x)+"\n")})
 return rs;
 }
 res.type("text/html").end(
@@ -76,8 +76,9 @@ a {text-decoration: none; color: black;}
 ${repeat("<li>||</li>",list)}
 </ul>
 </div>
-<div class="col-sm-9"></div>
+<div class="col-sm-9">
 ${content.data}
+</div>
 </div> 
 </div>
 </body>
