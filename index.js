@@ -90,7 +90,8 @@ ${repeat("<li class='list-group-item'><a href='/||'>||</a></li>",list)}
     ${(function() {
     var rs = "";
     path.split("/").splice(0,this.length-3).forEach(function(x,i) {rs+="<li class='breadcrumb-item'><a href='"+path.split("/").splice(0,i+1).join("/")+"'>"+x+"</a></li>"})
-    })}
+    return rs;
+    })()}
     <li class="breadcrumb-item active" aria-current="page">${title}</li>
   </ul>
 </nav>
