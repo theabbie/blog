@@ -70,6 +70,9 @@ a {text-decoration: none; color: black;}
 </head>
 <body>
 <div class="container-fluid">
+<div class="jumbotron text-center">  
+<h1>The Sorry Mind</h1>
+</div>
 <div class="row">
 <div class="col-sm-2">
 <ul>
