@@ -95,6 +95,7 @@ ${repeat("<li class='list-group-item'><a href='"+path+"/||'>||</a></li>",list)}
     <li class="breadcrumb-item active" aria-current="page">${title}</li>
   </ul>
 </nav>
+${list.length==0?"<h3>"+title+"</h3>":""}
 ${content.data}
 </div>
 <div class="col-sm-3" style="margin-top: 20px;">
