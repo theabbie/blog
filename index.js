@@ -5,7 +5,13 @@ app.get('/*', async function(req, res) {
 var root = "https://"+req.headers.host+"/";
 var path = decodeURIComponent(req.url.split("?")[0].substring(1))
 var raw = await axios("https://typi.tk/?url=https://github.com/theabbie/awto/tree/gh-pages/articles&sel=.list-item&attribs=href&t=1");
-var content = await axios("https://typi.tk/?url=https://github.com/theabbie/awto/blob/gh-pages/articles/"+path+"&sel=.js-file-line&attribs=class&t=1");
+var list = raw.map(x => decodeURIComponent(x.attrib.split("/").reverse()[0]))
+var content = await axios("https://typi.tk/?url=https://github.com/theabbie/awto/blob/gh-pages/articles/"+path+"&sel=.js-file-line&attribs=class&t=1&join= &pad=@");
+function repeat(str,arr) {
+var rs = "";
+arr.forEach(function(x) {rs+=str.split("||").join("x")})
+return rs;
+}
 res.type("text/html").end(
 `<!DOCTYPE html>
 <html lang="en">
@@ -65,8 +71,13 @@ a {text-decoration: none; color: black;}
 <body>
 <div class="container-fluid">
 <div class="row">
-  <div class="col-sm-4">abc abc abc abc abc abc abc abc abc abc abc abc</div>
-  <div class="col-sm-8">def def def def def def def def def def def def</div>
+<div class="col-sm-3">
+<ul>
+${repeat("<li>||</li>",list)}
+</ul>
+</div>
+<div class="col-sm-9"></div>
+${content}
 </div> 
 </div>
 </body>
