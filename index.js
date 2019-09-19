@@ -17,7 +17,7 @@ var rs = "";
 arr.forEach(function(x) {rs+=(str.split("||").join(x)+"\n")})
 return rs;
 }
-if (content==""&&list.length==0) {status=404;content="<h1>404</h1>";}
+if (content==""&&list.length==0) {status=404;title="404";}
 res.type("text/html").status(status).end(
 `<!DOCTYPE html>
 <html lang="en">
