@@ -2,6 +2,7 @@ const app = require('express')();
 const axios = require("axios");
 
 app.get('/*', async function(req, res) {
+var status = 200;
 var root = "https://"+req.headers.host+"/";
 var path = decodeURIComponent(req.url.split("?")[0].substring(1))
 var title = path.split("/").reverse()[0];
@@ -10,13 +11,14 @@ axios("https://typi.tk/?url=https://github.com/theabbie/awto/tree/gh-pages/artic
 axios("https://typi.tk/?url=https://github.com/theabbie/awto/blob/gh-pages/articles/"+path+"&sel=.js-file-line&attribs=class&static=true&join= &pad=@")
 ]);
 var list = raw.data.map(x => decodeURIComponent(x.attrib.split("/").reverse()[0]))
-if (list.length==0) {list.push("#0");list.push("#1");}
+if (list.length==0&&content!="") {list.push("#0");list.push("#1");}
 function repeat(str,arr) {
 var rs = "";
 arr.forEach(function(x) {rs+=(str.split("||").join(x)+"\n")})
 return rs;
 }
-res.type("text/html").end(
+if (content==""&&list.length==0) {status=404;content="<h1>404</h1>";}
+res.type("text/html").status(status).end(
 `<!DOCTYPE html>
 <html lang="en">
 <head>
