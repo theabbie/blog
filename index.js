@@ -2,23 +2,28 @@ const app = require('express')();
 const axios = require("axios");
 
 app.get('/*', async function(req, res) {
-var status = 200;
 var root = "https://"+req.headers.host+"/";
 var path = decodeURIComponent(req.url.split("?")[0].substring(1))
-var title = path.split("/").reverse()[0];
-var [raw, content] = await Promise.all([
-axios("https://typi.tk/?url=https://github.com/theabbie/awto/tree/gh-pages/articles/"+path+"&sel=.list-item&attribs=href&static=true"),
-axios("https://typi.tk/?url=https://github.com/theabbie/awto/blob/gh-pages/articles/"+path+"&sel=.js-file-line&attribs=class&static=true&join= &pad=@")
-]);
-var list = raw.data.map(x => decodeURIComponent(x.attrib.split("/").reverse()[0]))
-if (list.length==0&&content!="") {list.push("#0");list.push("#1");}
+var title;
+var list;
+var content;
+var data = await axios("https://api.github.com/repos/theabbie/theabbie.github.io/contents/articles/"+path),
+if (data.data.constructor === Array) {
+list = data.map(x => x.name);
+title="Contents...";
+content = "";
+}
+else {
+list = ["#0","#1"];
+content = Buffer.from(x.data.content, 'base64').toString();
+}
 function repeat(str,arr) {
 var rs = "";
 arr.forEach(function(x) {rs+=(str.split("||").join(x)+"\n")})
 return rs;
 }
 if (content==""&&list.length==0) {status=404;title="404";}
-res.type("text/html").status(status).end(
+res.type("text/html").status(200).end(
 `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -101,7 +106,7 @@ ${repeat("<li class='list-group-item'><a href='"+path+"/||'>||</a></li>",list)}
   </ul>
 </nav>
 ${list[0][0]=="#"?"<h3>"+title+"</h3>":""}
-${content.data}
+${content}
 </div>
 <div class="col-sm-3" style="margin-top: 20px;">
 <div class="card">
