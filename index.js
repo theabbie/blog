@@ -7,6 +7,7 @@ var path = decodeURIComponent(req.url.split("?")[0].substring(1))
 var title;
 var list;
 var content;
+var status = 200;
 try {
 var data = await axios("https://api.github.com/repos/theabbie/theabbie.github.io/contents/articles/"+path);
 if (data.data.constructor === Array) {
@@ -24,6 +25,7 @@ catch(err) {
 list = ["#0","#1"];
 title = "404";
 content = "The page does not exist";
+status = 404;
 }
 function repeat(str,arr) {
 var rs = "";
@@ -31,7 +33,7 @@ arr.forEach(function(x) {rs+=(str.split("||").join(x)+"\n")})
 return rs;
 }
 if (content==""&&list.length==0) {status=404;title="404";}
-res.type("text/html").status(200).end(
+res.type("text/html").status(status).end(
 `<!DOCTYPE html>
 <html lang="en">
 <head>
