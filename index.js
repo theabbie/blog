@@ -20,7 +20,7 @@ title = data.data.name;
 content = Buffer.from(data.data.content, 'base64').toString();
 }
 }
-catch {
+catch(err) {
 list = ["#0","#1"];
 title = "404";
 content = "The page does not exist";
