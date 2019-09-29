@@ -7,7 +7,7 @@ var path = decodeURIComponent(req.url.split("?")[0].substring(1))
 var title;
 var list;
 var content;
-var data = await axios("https://api.github.com/repos/theabbie/theabbie.github.io/contents/articles/"+path),
+var data = await axios("https://api.github.com/repos/theabbie/theabbie.github.io/contents/articles/"+path);
 if (data.data.constructor === Array) {
 list = data.map(x => x.name);
 title="Contents...";
