@@ -15,6 +15,7 @@ content = "";
 }
 else {
 list = ["#0","#1"];
+title = data.data.name;
 content = Buffer.from(data.data.content, 'base64').toString();
 }
 function repeat(str,arr) {
