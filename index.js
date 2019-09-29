@@ -9,13 +9,13 @@ var list;
 var content;
 var data = await axios("https://api.github.com/repos/theabbie/theabbie.github.io/contents/articles/"+path);
 if (data.data.constructor === Array) {
-list = data.map(x => x.name);
+list = data.data.map(x => x.name);
 title="Contents...";
 content = "";
 }
 else {
 list = ["#0","#1"];
-content = Buffer.from(x.data.content, 'base64').toString();
+content = Buffer.from(data.data.content, 'base64').toString();
 }
 function repeat(str,arr) {
 var rs = "";
