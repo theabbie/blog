@@ -98,7 +98,7 @@ a {text-decoration: none; color: black;}
 <div class="row">
 <div class="col-sm-2">
 <ul class="list-group">
-${repeat("<li class='list-group-item'><a href='/"+path+"/||'>||</a></li>",list)}
+${repeat("<li class='list-group-item'><a href='"+root+path+"/||'>||</a></li>",list)}
 </ul>
 </div>
 <div class="col-sm-7" style="margin-top: 20px;">
